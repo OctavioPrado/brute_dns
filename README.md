@@ -25,4 +25,4 @@ This Script its made too find subdomains based in four wordlists, he uses dig to
 
 
 
-##### The lists used in this project were taken from the https://github.com/rbsec/dnscan repository and are under the GPLv3 license
+##### The wordlists used in this project were taken from the https://github.com/rbsec/dnscan repository and are under the GPLv3 license
