@@ -4,6 +4,8 @@
 
 This Script its made too find subdomains based in four wordlists, he uses dig tool to verify if the subdmain exist
 
+This Script its made to run in Bash interpreter!
+
 ### Use Mode
 
 ./brute_dns [URL] [Options]
