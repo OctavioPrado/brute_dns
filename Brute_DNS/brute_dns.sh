@@ -45,7 +45,7 @@ fi
 case "$2" in
     "")
         for host1 in $(cat top.txt) ; do
-            resultdig=$(dig +short $host1.$1 | grep -v ";;")
+            resultdig=$(dig +short $host1.$1 | grep -v ";;" | tail -n 1)
             if [[ -n $resultdig ]]; then
                 echo -e "\033[37;1mSubdomain find $host1.$1 ===> IP $resultdig\033[m"
             fi
@@ -54,7 +54,7 @@ case "$2" in
 
 	"-s")
 		for host1 in $(cat small.txt) ; do  # This loop pass the content of a wordlist .txt file to variable host1
-		    resultdig=$(dig +short $host1.$1 | grep -v ";;")    # The purpose of this variable its keep the ip results of command dig
+		    resultdig=$(dig +short $host1.$1 | grep -v ";;" | tail -n 1)    # The purpose of this variable its keep the ip results of command dig
 			if [[ -n $resultdig ]]; then        # This conditional test will verify the variable resultdig, if the result its null  dont print
 				echo -e "\033[37;1mSubdomain find $host1.$1 ===> IP $resultdig\033[m"
 			fi
@@ -63,7 +63,7 @@ case "$2" in
 
 	"-m")
 		for host1 in $(cat medium.txt) ; do
-			resultdig=$(dig +short $host1.$1 | grep -v ";;")
+			resultdig=$(dig +short $host1.$1 | grep -v ";;" | tail -n 1)
 			if [[ -n $resultdig ]]; then
 				echo -e "\033[37;1mSubdomain find $host1.$1 ===> IP $resultdig\033[m"
 			fi
@@ -72,7 +72,7 @@ case "$2" in
 
     "-b")
         for host1 in $(cat bigger.txt) ; do
-            resultdig=$(dig +short $host1.$1 | grep -v ";;")
+            resultdig=$(dig +short $host1.$1 | grep -v ";;" | tail -n 1)
             if [[ -n $resultdig ]]; then
                 echo -e "\033[37;1mSubdomain find $host1.$1 ===> IP $resultdig\033[m"
             fi
@@ -81,7 +81,7 @@ case "$2" in
 
     "-t")
         for host1 in $(cat top.txt) ; do
-            resultdig=$(dig +short $host1.$1 | grep -v ";;")
+            resultdig=$(dig +short $host1.$1 | grep -v ";;" | tail -n 1)
             if [[ -n $resultdig ]]; then
                 echo -e "\033[37;1mSubdomain find $host1.$1 ===> IP $resultdig\033[m"
             fi
@@ -89,7 +89,7 @@ case "$2" in
 	;;
 	"-a")
         for host1 in $(cat $3) ; do
-            resultdig=$(dig +short $host1.$1 | grep -v ";;")
+            resultdig=$(dig +short $host1.$1 | grep -v ";;" | tail -n 1)
             if [[ -n $resultdig ]]; then
                 echo -e "\033[37;1mSubdomain find $host1.$1 ===> IP $resultdig\033[m"
             fi
